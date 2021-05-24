@@ -9,6 +9,7 @@ pipeline {
     stages {
         when {
         branch 'main'
+        }
     }
         stage('Prepare') {
             steps {
