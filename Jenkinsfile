@@ -21,8 +21,8 @@ pipeline {
                     sh '''
                     whoami
                     pwd
-                    export DEPLOY_ENVIRONMENT=params.DEPLOY_ENVIRONMENT
-                    echo $DEPLOY_ENVIRONMENT
+                    export DEPLOY_ENVIRONMENT=env.DEPLOY_ENVIRONMENT
+                    printenv
                     chmod +x runway
                    '''
                 }
