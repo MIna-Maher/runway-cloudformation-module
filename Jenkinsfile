@@ -7,7 +7,7 @@ pipeline {
       
     parameters {
           booleanParam(defaultValue:false, description:'Skip publishing - build only', name:'SKIP_PUBLISH')
-          string(defaultValue:dev, description:'Archive IPA file and run Automated tests', name:'RUN_AUTOMATION')
+          string(description:'Archive IPA file and run Automated tests', name:'RUN_AUTOMATION')
           //choice(choices: ['dev', 'prod'], defaultValue: 'dev' , name: 'DEPLOY_ENVIRONMENT')
     }
     stages {
