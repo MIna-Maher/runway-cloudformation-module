@@ -19,7 +19,7 @@ pipeline {
                     sh '''
                     whoami
                     pwd
-                    export DEPLOY_ENVIRONMENT=$DEPLOY_ENVIRONMENT
+                    export DEPLOY_ENVIRONMENT=dev
                     echo $DEPLOY_ENVIRONMENT
                     chmod +x runway
                     ./runway plan --ci
