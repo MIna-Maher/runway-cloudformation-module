@@ -21,6 +21,8 @@ pipeline {
                     pwd
                     export DEPLOY_ENVIRONMENT=$DEPLOY_ENVIRONMENT
                     echo $DEPLOY_ENVIRONMENT
+                    chmod +x runway
+                    ./runway plan --ci
                    '''
                 }
         }
