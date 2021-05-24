@@ -1,5 +1,6 @@
 pipeline {
-       agent none
+
+       agent any
       
     parameters {
         booleanParam(defaultValue:false, description:'Skip publishing - build only', name:'SKIP_PUBLISH')
