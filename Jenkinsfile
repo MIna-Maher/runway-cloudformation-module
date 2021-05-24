@@ -15,12 +15,13 @@ pipeline {
         stage('Prepare') {
             when {branch 'main'}
             steps {
-                    sh 'whoami'
-                    sh 'pwd'
+                    sh '''
+                    whoami
+                    pwd
                     echo "######################Exporting  DEPLOY_ENVIRONMENT ###### as ${DEPLOY_ENVIRONMENT}"
-                    sh 'export DEPLOY_ENVIRONMENT=env.DEPLOY_ENVIRONMENT'
-                    sh 'echo $DEPLOY_ENVIRONMENT'
-
+                    export DEPLOY_ENVIRONMENT=env.DEPLOY_ENVIRONMENT
+                    echo $DEPLOY_ENVIRONMENT
+                   '''
                 }
         }
     }    
