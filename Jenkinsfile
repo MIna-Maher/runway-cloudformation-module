@@ -18,7 +18,7 @@ pipeline {
                     sh 'whoami'
                     sh 'pwd'
                     echo "######################Exporting  DEPLOY_ENVIRONMENT ###### as ${DEPLOY_ENVIRONMENT}"
-                    sh `export DEPLOY_ENVIRONMENT=${DEPLOY_ENVIRONMENT}`
+                    sh 'export DEPLOY_ENVIRONMENT=${DEPLOY_ENVIRONMENT}'
                     sh 'echo $DEPLOY_ENVIRONMENT'
 
                 }
