@@ -18,7 +18,7 @@ pipeline {
                     sh '''
                     whoami
                     pwd
-                    echo "######################Exporting  DEPLOY_ENVIRONMENT ###### as ${DEPLOY_ENVIRONMENT}"
+                    echo "######################Exporting  DEPLOY_ENVIRONMENT ###### as $DEPLOY_ENVIRONMENT "
                     export DEPLOY_ENVIRONMENT=env.DEPLOY_ENVIRONMENT
                     echo $DEPLOY_ENVIRONMENT
                    '''
