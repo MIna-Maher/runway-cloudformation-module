@@ -15,8 +15,8 @@ pipeline {
         stage('Prepare') {
             when {branch 'main'}
             steps {
-                    echo params.DEPLOY_ENVIRONMENT
-                    print(params.DEPLOY_ENVIRONMENT)
+                    echo params.RUN_AUTOMATION
+                    print(params.RUN_AUTOMATION)
                     sh 'echo ######################Exporting  DEPLOY_ENVIRONMENT ###### as ${DEPLOY_ENVIRONMENT}'
                     sh '''
                     whoami
