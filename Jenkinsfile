@@ -17,14 +17,13 @@ pipeline {
             steps {
                     echo params.DEPLOY_ENVIRONMENT
                     print(params.DEPLOY_ENVIRONMENT)
-                    sh 'echo ######################Exporting  DEPLOY_ENVIRONMENT ###### as ${DEPLOY_ENVIRONMENT}'
+                    sh 'echo ######################Exporting  DEPLOY_ENVIRONMENT ###### as params.DEPLOY_ENVIRONMENT'
                     sh '''
                     whoami
                     pwd
-                    export DEPLOY_ENVIRONMENT=dev
+                    export DEPLOY_ENVIRONMENT=params.DEPLOY_ENVIRONMENT
                     echo $DEPLOY_ENVIRONMENT
                     chmod +x runway
-                    ./runway plan --ci
                    '''
                 }
         }
