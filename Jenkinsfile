@@ -14,7 +14,7 @@ pipeline {
             steps {
                     sh 'whoami'
                     sh 'pwd'
-                    echo "My variable is ${DEPLOY_ENVIRONMENT}"
+                    //echo "My variable is ${DEPLOY_ENVIRONMENT}"
                 }
         }
 }     
