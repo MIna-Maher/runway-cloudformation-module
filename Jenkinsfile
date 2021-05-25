@@ -5,25 +5,32 @@ pipeline {
 
        agent any
       
-    parameters {
-          booleanParam(defaultValue:false, description:'Skip publishing - build only', name:'SKIP_PUBLISH')
+    //parameters {
+      //    booleanParam(defaultValue:false, description:'Skip publishing - build only', name:'SKIP_PUBLISH')
           //string(name: 'RUN_AUTOMATION', defaultValue: 'dev', description:'Archive IPA file and run Automated tests')
           //choice(choices: ['dev', 'prod'], name: 'DEPLOY_ENVIRONMENT')
     }
     stages {
         
         stage('Prepare') {
-            when {branch 'main'}
+            when {branch 'master'}
             steps {
-                    echo params.DEPLOY_ENVIRONMENT
-                    print(params.DEPLOY_ENVIRONMENT)
-                    sh 'echo ######################Exporting  DEPLOY_ENVIRONMENT ###### as ${DEPLOY_ENVIRONMENT}'
+                    sh 'echo ######################Exporting  DEPLOY_ENVIRONMENT ######'
+                    print(DEPLOY_ENVIRONMENT)
                     sh '''
-                    whoami
-                    pwd
                     export DEPLOY_ENVIRONMENT=${DEPLOY_ENVIRONMENT}
-                    printenv
+                    printenv | grep -i DEPLOY_ENVIRONMENT
                     chmod +x runway
+                    ./runway plan --ci
+                   '''
+                }
+        }
+        stage('deploy') {
+            when {branch 'master'}
+            steps {
+                    sh 'echo #####################Deploying the app ######'
+                    print(DEPLOY_ENVIRONMENT)
+                    sh '''
                     ./runway plan --ci
                    '''
                 }
