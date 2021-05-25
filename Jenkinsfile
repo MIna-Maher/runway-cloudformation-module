@@ -24,15 +24,5 @@ pipeline {
                    """
                 }
         }
-        stage('deploy') {
-            when {branch 'master'}
-            steps {
-                    sh 'echo #####################Deploying the app ######'
-                    print(DEPLOY_ENVIRONMENT)
-                    sh """
-                    printenv | grep -i DEPLOY_ENVIRONMENT
-                   """
-                }
-        }
     }
 }
