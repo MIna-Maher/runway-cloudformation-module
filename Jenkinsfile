@@ -28,9 +28,10 @@ pipeline {
             steps {
                     sh 'echo #####################Deploying the app ######'
                     print(DEPLOY_ENVIRONMENT)
-                    sh '''
+                    sh """
+                     export DEPLOY_ENVIRONMENT=${DEPLOY_ENVIRONMENT}
                     ./runway plan --ci
-                   '''
+                   """
                 }
         }
     }
