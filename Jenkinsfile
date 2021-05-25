@@ -16,8 +16,8 @@ pipeline {
             steps {
                     sh 'echo ######################Exporting  DEPLOY_ENVIRONMENT ######'
                     print(DEPLOY_ENVIRONMENT)
+                    sh 'export DEPLOY_ENVIRONMENT=${DEPLOY_ENVIRONMENT}'
                     sh '''
-                    export DEPLOY_ENVIRONMENT=${DEPLOY_ENVIRONMENT}
                     printenv | grep -i DEPLOY_ENVIRONMENT
                     chmod +x runway
                    '''
