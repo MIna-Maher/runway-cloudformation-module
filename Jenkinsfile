@@ -20,7 +20,6 @@ pipeline {
                     export DEPLOY_ENVIRONMENT=${DEPLOY_ENVIRONMENT}
                     printenv | grep -i DEPLOY_ENVIRONMENT
                     chmod +x runway
-                    ./runway plan --ci
                    '''
                 }
         }
