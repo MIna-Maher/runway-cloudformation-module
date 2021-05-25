@@ -88,7 +88,7 @@ Resources:
             sudo yum install -y httpd
             sudo systemctl start httpd
             sudo systemctl enable httpd
-            echo "Hello Rackers from public webserver 1" > /var/www/html/index.html
+            echo "Hello Rackers from public webserver 1-FromJenkins-Pipeline" > /var/www/html/index.html
   WebServerPublic2:
     Type: AWS::EC2::Instance  
     Properties:
