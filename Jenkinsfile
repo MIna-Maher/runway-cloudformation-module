@@ -15,7 +15,7 @@ pipeline {
             when {branch 'master'}
             steps {
                     sh 'echo ######################Exporting  DEPLOY_ENVIRONMENT ######'
-                    sh 'export DEPLOY_ENVIRONMENT=${DEPLOY_ENVIRONMENT}'
+                    export DEPLOY_ENVIRONMENT=$DEPLOY_ENVIRONMENT
                     sh '''
                     printenv | grep -i DEPLOY_ENVIRONMENT
                     chmod +x runway
