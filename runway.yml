@@ -5,4 +5,4 @@ deployments:
       - path: minaapp.cfn
       # - etc...
     regions:
-      - us-west-1
+      - us-east-1
