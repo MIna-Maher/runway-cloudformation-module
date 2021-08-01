@@ -1,0 +1,18 @@
+version: 0.2
+
+# env:
+#   variables:
+#     ENV_VAR: "test"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands:
+      - curl -L https://oni.ca/runway/1.4.4/linux -o /usr/local/bin/runway && chmod 755 /usr/local/bin/runway
+      - pip install boto3 awscli --upgrade
+
+  build:
+    commands:
+      - runway takeoff
+
