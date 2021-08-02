@@ -4,7 +4,7 @@ cfngin_bucket: cfngin-${namespace}-${region} #By default it uses a bucket named 
 sys_path: ./    #Relative or absolute path to use as the work directory.
 tags:
   CreatedBy: "minaroufael"
-
+#########################
 stacks:
   vpc-stack:
     template_path: templates/vpc-stack.yml  # also supports json templates
