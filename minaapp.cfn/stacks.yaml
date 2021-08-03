@@ -1,6 +1,6 @@
 namespace: ${namespace}
 #cfngin_bucket: cfngin-${namespace}-${region} #By default it uses a bucket named cfngin-${namespace}-${region}
-
+#stacker_bucket: ${stacker_bucket_name}
 sys_path: ./    #Relative or absolute path to use as the work directory.
 tags:
   CreatedBy: "minaroufael"
@@ -14,18 +14,18 @@ stacks:
       PubSubBCidr: ${PubSubBCidr}
       PriSubACidr: ${PriSubACidr}
       PriSubBCidr: ${PriSubBCidr}
-  servers-stack:
-    template_path: templates/servers-stack.yml
-    #requires:
+  #servers-stack:
+  #  template_path: templates/servers-stack.yml
+  #  #requires:
     #  - vpc-stack
-    variables:
-      InstanceType: ${InstanceType}
-      vpcid: ${output vpc-stack::vpcid}
-      VPCCIDR: ${VPCCIDR}
-      PublicSubnetA: ${output vpc-stack::PublicSubnetA}
-      PublicSubnetB: ${output vpc-stack::PublicSubnetB}
-      PrivateSubnetA: ${output vpc-stack::PrivateSubnetA}
-      PrivateSubnetB: ${output vpc-stack::PrivateSubnetB}
-      KeyName: ${KeyName}
-      LatestAmiId: ${LatestAmiId}
-      SSHLocation: ${SSHLocation}
+  #  variables:
+ #     InstanceType: ${InstanceType}
+   #   vpcid: ${output vpc-stack::vpcid}
+    #  VPCCIDR: ${VPCCIDR}
+    #  PublicSubnetA: ${output vpc-stack::PublicSubnetA}
+    #  PublicSubnetB: ${output vpc-stack::PublicSubnetB}
+    #  PrivateSubnetA: ${output vpc-stack::PrivateSubnetA}
+    #  PrivateSubnetB: ${output vpc-stack::PrivateSubnetB}
+    #  KeyName: ${KeyName}
+    #  LatestAmiId: ${LatestAmiId}
+    #  SSHLocation: ${SSHLocation}
