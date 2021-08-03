@@ -14,4 +14,4 @@ phases:
 
   build:
     commands:
-      - runway deploy
+      - runway plan
