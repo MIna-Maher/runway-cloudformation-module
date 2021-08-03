@@ -1,5 +1,5 @@
 namespace: ${namespace}
-#cfngin_bucket: cfngin-${namespace}-${region} #By default it uses a bucket named cfngin-${namespace}-${region}
+cfngin_bucket: cfngin-reatrgetly-us-east-1 ##cfngin-${namespace}-${region} #By default it uses a bucket named cfngin-${namespace}-${region}
 #stacker_bucket: ${stacker_bucket_name}
 sys_path: ./    #Relative or absolute path to use as the work directory.
 tags:
